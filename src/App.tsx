@@ -16,7 +16,6 @@ import {ENV_PROJECT_ID} from '@env';
 
 import {TodoList} from './views/TodoList';
 import {monadTestnet} from './utils/ChainUtils';
-import {siweConfig} from './utils/SiweUtils';
 
 // 1. Get projectId at https://cloud.reown.com
 const projectId = ENV_PROJECT_ID;
@@ -61,7 +60,7 @@ createAppKit({
   metadata,
   chains,
   config,
-  siweConfig,
+  // siweConfig,
   customWallets,
   clipboardClient,
   enableAnalytics: true,
