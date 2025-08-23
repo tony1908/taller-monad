@@ -11,7 +11,6 @@ import {
   AppKit,
 } from '@reown/appkit-ethers-react-native';
 import {FlexView, Text} from '@reown/appkit-ui-react-native';
-import {handleResponse} from '@coinbase/wallet-mobile-sdk';
 import {ENV_PROJECT_ID} from '@env';
 
 import {TodoList} from './views/TodoList';
@@ -77,16 +76,7 @@ createAppKit({
 
 function App(): React.JSX.Element {
   // Coinbase sdk setup
-  useEffect(() => {
-    const sub = Linking.addEventListener('url', ({url}) => {
-      const handledBySdk = handleResponse(new URL(url));
-      if (!handledBySdk) {
-        // Handle other deeplinks
-      }
-    });
 
-    return () => sub.remove();
-  }, []);
 
   return (
     <SafeAreaView style={styles.container}>
